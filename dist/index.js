@@ -120,7 +120,8 @@ async function main () {
       defaultBranch,
       pullRequestTitlePattern,
       apiUrl,
-      graphqlUrl
+      graphqlUrl,
+      extraFiles
     })
 
     if (releaseCreated) {
@@ -15380,9 +15381,9 @@ module.exports = function (config) {
   })
 
   return Q.all([
-    readFile(__nccwpck_require__.ab + "template1.hbs", 'utf-8'),
-    readFile(__nccwpck_require__.ab + "header1.hbs", 'utf-8'),
-    readFile(__nccwpck_require__.ab + "commit1.hbs", 'utf-8'),
+    readFile(__nccwpck_require__.ab + "template2.hbs", 'utf-8'),
+    readFile(__nccwpck_require__.ab + "header2.hbs", 'utf-8'),
+    readFile(__nccwpck_require__.ab + "commit2.hbs", 'utf-8'),
     readFile(__nccwpck_require__.ab + "footer1.hbs", 'utf-8')
   ])
     .spread((template, header, commit, footer) => {
@@ -15602,9 +15603,9 @@ function conventionalChangelogWriterInit (context, options) {
     includeDetails: false,
     ignoreReverted: true,
     doFlush: true,
-    mainTemplate: readFileSync(__nccwpck_require__.ab + "template.hbs", 'utf-8'),
-    headerPartial: readFileSync(__nccwpck_require__.ab + "header.hbs", 'utf-8'),
-    commitPartial: readFileSync(__nccwpck_require__.ab + "commit.hbs", 'utf-8'),
+    mainTemplate: readFileSync(__nccwpck_require__.ab + "template1.hbs", 'utf-8'),
+    headerPartial: readFileSync(__nccwpck_require__.ab + "header1.hbs", 'utf-8'),
+    commitPartial: readFileSync(__nccwpck_require__.ab + "commit1.hbs", 'utf-8'),
     footerPartial: readFileSync(__nccwpck_require__.ab + "footer.hbs", 'utf-8')
   }, options)
 
@@ -66360,9 +66361,9 @@ class RubyYoshi extends release_pr_1.ReleasePR {
                 owner: this.gh.owner,
                 repository: this.gh.repo,
                 bumpMinorPreMajor: this.bumpMinorPreMajor,
-                commitPartial: fs_1.readFileSync(__nccwpck_require__.ab + "commit2.hbs", 'utf8'),
-                headerPartial: fs_1.readFileSync(__nccwpck_require__.ab + "header2.hbs", 'utf8'),
-                mainTemplate: fs_1.readFileSync(__nccwpck_require__.ab + "template2.hbs", 'utf8'),
+                commitPartial: fs_1.readFileSync(__nccwpck_require__.ab + "commit.hbs", 'utf8'),
+                headerPartial: fs_1.readFileSync(__nccwpck_require__.ab + "header.hbs", 'utf8'),
+                mainTemplate: fs_1.readFileSync(__nccwpck_require__.ab + "template.hbs", 'utf8'),
                 changelogSections: CHANGELOG_SECTIONS,
             });
             const githubTag = this.lastPackageVersion
