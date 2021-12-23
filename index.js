@@ -113,7 +113,8 @@ async function main () {
       defaultBranch,
       pullRequestTitlePattern,
       apiUrl,
-      graphqlUrl
+      graphqlUrl,
+      extraFiles
     })
 
     if (releaseCreated) {
